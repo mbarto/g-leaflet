@@ -34,5 +34,10 @@ public class WmsLayerOptions extends TileLayerOptions {
 	/*-{
 		this.version = version;
 	}-*/;
+	
+	public native final void setTimestamp(Integer timestamp) 
+        /*-{
+                this.timestamp = timestamp;
+        }-*/;
 
 }
