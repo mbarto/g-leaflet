@@ -4,7 +4,7 @@
     <!-- POM file generated with GWT webAppCreator -->
     <modelVersion>4.0.0</modelVersion>
 
-    <version>0.4.8-SNAPSHOT</version>
+    <version>0.4.8-GEOSOLUTIONS</version>
     <groupId>org.peimari</groupId>
     <artifactId>g-leaflet</artifactId>
     <packaging>jar</packaging>
@@ -68,6 +68,15 @@
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 
         <plugins>
+            <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                        <compilerArgument></compilerArgument>
+                    </configuration>
+                </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
@@ -198,5 +207,19 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ftp</artifactId>
+        <version>2.3</version>
+      </extension>
+    </extensions>
     </build>
+    <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>geosolutions</id>
+      <url>ftp://maven.geo-solutions.it</url>
+    </repository>
+  </distributionManagement>
 </project>
